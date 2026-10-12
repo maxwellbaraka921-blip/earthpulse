@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EarthPulse – Live ISS &amp; Earthquakes</title>
+  <meta name="description" content="A live 3D globe showing the International Space Station and real earthquakes from the last 24 hours.">
+  <link rel="stylesheet" href="style.css">
+  <!-- For production, pin an exact version, e.g. globe.gl@2.x.y -->
+  <script src="https://unpkg.com/globe.gl@2"></script>
+</head>
+<body>
+  <div id="globe" aria-label="3D globe showing the ISS and recent earthquakes"></div>
+
+  <aside id="panel">
+    <header>
+      <h1>🌍 EarthPulse</h1>
+      <p class="sub">Live ISS + earthquakes</p>
+    </header>
+
+    <section>
+      <h2>🛰️ International Space Station</h2>
+      <dl>
+        <dt>Latitude</dt><dd id="issLat">–</dd>
+        <dt>Longitude</dt><dd id="issLng">–</dd>
+        <dt>Altitude</dt><dd id="issAlt">–</dd>
+        <dt>Speed</dt><dd id="issVel">–</dd>
+        <dt>Sunlight</dt><dd id="issVis">–</dd>
+        <dt>From you</dt><dd id="issDist">Tap “Use my location”</dd>
+      </dl>
+      <div class="buttons">
+        <button id="followBtn" class="on" type="button">Following ISS</button>
+        <button id="locBtn" type="button">Use my location</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>🌋 Earthquakes (24h, M2.5+)</h2>
+      <dl>
+        <dt>Total</dt><dd id="quakeCount">–</dd>
+        <dt>Strongest</dt><dd id="quakeMax">–</dd>
+        <dt>Nearest to ISS</dt><dd id="issNearQuake">–</dd>
+      </dl>
+      <ul id="quakeList"></ul>
+    </section>
+
+    <footer>
+      <p id="status">Loading…</p>
+      <p class="note">For curiosity only, not an official warning system. In an emergency, follow your national authorities.</p>
+      <p class="note">Data: wheretheiss.at · USGS · three-globe imagery</p>
+    </footer>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
